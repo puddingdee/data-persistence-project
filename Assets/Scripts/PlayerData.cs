@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
-public class DataManager : MonoBehaviour
+public class PlayerData : MonoBehaviour
 {
-    public static DataManager Instance;
+    public static PlayerData instance;
+    public string playerName;
+    public int Score;
+
     private void Awake()
     {
-        if (Instance != null )
+        if (instance == null)
         {
             Destroy(gameObject);
-            
         }
-        Instance = this;
+        instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
 }
